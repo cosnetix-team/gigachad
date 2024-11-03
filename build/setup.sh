@@ -16,7 +16,8 @@ sudo apt install -y \
     zip \
     unzip \
     htop \
-    net-tools
+    net-tools \
+    tmux
 
 echo "Adding deadsnakes PPA for Python 3.11..."
 # Install Python 3.11 from deadsnakes PPA

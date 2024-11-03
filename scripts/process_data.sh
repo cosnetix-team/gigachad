@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ./data
+# cd ./job
 
 # Indexing
 echo "Indexing Started"
@@ -8,10 +8,13 @@ bwa index ./reference/hg38.fa
 
 # Alignment
 echo "Alignment Started"
-rmdir ./alignment && mkdir ./alignment
-bwa mem ./reference/hg38.fa ./sample/SRR741411_1.fastq ./sample/SRR741411_2.fastq > ./alignment/SRR741411_alignment.sam
+rm -rf ./alignment 
+mkdir ./alignment
+bwa mem ./reference/hg38.fa ./sample/ERR229775_1.fastq ./sample/ERR229775_2.fastq > ./alignment/ERR229775_alignment.sam
 
 # Sort
 echo "Sorting Started"
+rm -rf ./sorted
 mkdir ./sorted
-samtools view -Sb ./alignment/SRR741411_alignment.sam 2>> sorting.log | samtools sort -o ./sorted/SRR741411_sorted.bam 2>> sorting.log
+samtools view -Sb ./alignment/ERR229775_alignment.sam 2>> sorting.log | samtools sort -o ./sorted/ERR229775_sorted.bam 2>> sorting.log
+
