@@ -34,3 +34,4 @@ echo "Sample 2 Gunzipped"
 # Gunzip Reference (uncomment if needed)
 # gunzip "$job_dir/reference/hg38.fa.gz"
 # echo "Reference Gunzipped"
+
